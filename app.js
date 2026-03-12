@@ -82,4 +82,42 @@ localStorage.removeItem("leitura_" + index);
 
 }
 
+document.addEventListener("DOMContentLoaded", function(){
+
+  // pegar todos os inputs da tabela
+  const inputs = document.querySelectorAll("table input");
+
+  inputs.forEach((input, index) => {
+
+    // escuta a tecla pressionada
+    input.addEventListener("keydown", function(e){
+
+      if(e.key === "Enter"){ // se apertou Enter
+        e.preventDefault(); // evita quebrar a página
+
+        const currentCell = input.closest("td");
+        const currentRow = input.closest("tr");
+        const table = input.closest("table");
+
+        // pegar índice da coluna
+        const colIndex = Array.from(currentRow.children).indexOf(currentCell);
+
+        // pegar próxima linha
+        const nextRow = currentRow.nextElementSibling;
+
+        if(nextRow){ // se houver linha abaixo
+          const nextInput = nextRow.children[colIndex].querySelector("input");
+          if(nextInput){
+            nextInput.focus(); // coloca o cursor no input da linha abaixo
+            nextInput.select(); // opcional: seleciona o valor para digitar rápido
+          }
+        }
+
+      }
+
+    });
+
+  });
+
+});
 }
