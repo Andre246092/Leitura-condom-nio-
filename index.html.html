@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Leitura Condomínio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2c3e50">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Leitura de Água e Gás</h2>
+
+<table>
+
+<tr>
+<th>AP</th>
+<th>Água</th>
+<th>Gás</th>
+</tr>
+
+<tr><td>11</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>12</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>13</td><td><input type="number"></td><td><input type="number"></td></tr>
+
+<tr><td>21</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>22</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>23</td><td><input type="number"></td><td><input type="number"></td></tr>
+
+<tr><td>31</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>32</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>33</td><td><input type="number"></td><td><input type="number"></td></tr>
+
+<tr><td>41</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>42</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>43</td><td><input type="number"></td><td><input type="number"></td></tr>
+
+<tr><td>51</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>52</td><td><input type="number"></td><td><input type="number"></td></tr>
+<tr><td>53</td><td><input type="number"></td><td><input type="number"></td></tr>
+
+</table>
+
+<div class="buttons">
+<button class="exportar" onclick="exportarExcel()">Exportar para Excel</button>
+<button class="limpar" onclick="limparCampos()">Limpar Leituras</button>
+</div>
+
+</div>
+
+</body>
+
+<script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+navigator.serviceWorker.register("service-worker.js")
+.then(function() {
+console.log("Service Worker registrado");
+});
+}
+</script>
+
+</body>
+</html>
